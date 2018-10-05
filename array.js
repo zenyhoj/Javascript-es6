@@ -49,13 +49,29 @@ var filteredProduct = products.filter(function(product){
 console.log(filteredProduct);
 
 /* for loop implementation
-
-var filteredProducts = [];
+var filteredProducts = []; 
 for(var i = 0; i<products.length; i++) {
     if(products[i].type ==='fruit') {
         filteredProducts.push(products[i]);
     }
 }
 console.log(filteredProducts);*/
+
+// Display every posts comment equal to the post id
+var post = {id: 3, title: 'New Post'};
+var comments = [
+    {postId: 4, comment: 'lorem ipsum dolor sdfdsf'},
+    {postId: 3, comment: 'lorem ipsum dolor sdfdsf'},
+    {postId: 4, comment: 'lorem ipsum dolor sdfdsf'}
+];
+
+function commentsForPosts(post, comments) {
+    return comments.filter(function(comment) { //return is important
+        return comment.postId === post.id; //return the actual object value not a the boolean; if console log is used boolean is returned
+    });
+
+}
+
+console.log(commentsForPosts(post, comments));
 
 
