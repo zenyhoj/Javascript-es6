@@ -1,13 +1,13 @@
 // ES6 Array Helpers
 
-// array.forEach()
+// array.prototype.forEach()
 // Definition: The forEach() method executes a provided function once for each array element.
 var arrayOfNumbers = [1,2,3];
 arrayOfNumbers.forEach(number => console.log(number));
 arrayOfNumbers.forEach(number => console.log(number * 2));
 
-// array.map()
-// The map() method creates a new array with the results of calling a provided function on every element in the calling array.
+// array.prototype.map()
+// The map() method creates a new array with the results of calling a provided function on every element in the calling array.prototype.
 // return an exact length of array elements
 // Possible use case: display post objects from post array of objects
 // Example 1
@@ -32,7 +32,7 @@ var carPrices = cars.map(function(car) {
 console.log(carPrices);
 
 
-// array.filter
+// array.prototype.filter
 // Definition: The filter() method creates a new array with all elements that pass the test implemented by the provided function.
 
 var products = [
@@ -75,3 +75,32 @@ function commentsForPosts(post, comments) {
 console.log(commentsForPosts(post, comments));
 
 
+// array.prototype.find
+// The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+
+var array1 = [5, 12, 8, 130, 44];
+
+var found = array1.find(function(element) {
+  return element > 10;
+});
+
+console.log(found);
+// expected output: 12    
+
+
+// Example 2
+function Car(model) {
+    this.model = model;
+    
+}
+var cars = [
+    new Car('Camaro'),
+    new Car('Buick'),
+    new Car('jaguar'),
+];
+
+var filteredCar = cars.find(function(car) {
+    return car.model === 'Camaro';
+})
+console.log(filteredCar);
+// expected output: Camaro
