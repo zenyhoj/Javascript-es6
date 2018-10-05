@@ -104,3 +104,47 @@ var filteredCar = cars.find(function(car) {
 })
 console.log(filteredCar);
 // expected output: Camaro
+
+// Example 3
+
+var posts = [
+    {id: 1, title: 'New Post'},
+    {id: 2, title: 'Old Post'}
+]
+var comment = {postId: 2, comment: 'Some comment on posts id 1'};
+
+// creating a function and using find helper function to display comment postId equal to posts id
+function searchCommentOnPosts(posts, comment) {
+    return posts.find(function(post) { 
+        return comment.postId === post.id;
+    });
+    
+}
+var postTitle = searchCommentOnPosts(posts, comment);
+console.log(postTitle);
+
+// expected output: id: 2, title: 'Old Post'
+
+
+// Example 4
+var employees = [
+    { firstName: 'joe', lastName: 'Balingit', dateHired: '2010-10-01', status: 'Permanent', assignedDiv: 1 },
+    { firstName: 'Alan', lastName: 'Reños', dateHired: '2006-10-01', status: 'Permanent', assignedDiv: 2},
+    { firstName: 'Rolly', lastName: 'Reños', dateHired: '2006-10-01', status: 'Permanent', assignedDiv: 2},
+];
+
+var divisions = { divId: 2, divName: 'Finance & Commercial' }
+    
+// Purpose: display all employees that in specific division
+
+function getDivAEmployees(employees, divisions) {
+
+    return employees.find(function(emp) {
+        return emp.assignedDiv === divisions.divId;
+    });
+}
+
+var empDivA = getDivAEmployees(employees, divisions);
+console.log(empDivA);
+// expected output: first element with assignedDiv = 2;
+// Only returns the first element. when returning all elements that matches the key, use filter method.
