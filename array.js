@@ -113,7 +113,7 @@ var posts = [
 ]
 var comment = {postId: 2, comment: 'Some comment on posts id 1'};
 
-creating a function and using find helper function to display comment postId equal to posts id
+//creating a function and using find helper function to display comment postId equal to posts id
 function searchCommentOnPosts(posts, comment) {
     return posts.find(function(post) { 
         return comment.postId === post.id;
@@ -148,3 +148,25 @@ var empDivA = getDivAEmployees(employees, divisions);
 console.log(empDivA);
 // expected output: first element with assignedDiv = 2;
 // Only returns the first element. when returning all elements that matches the key, use filter method.
+
+
+// array.prototype.reduce
+
+var numbers = [10, 20, 30];
+// var sum = 0; //or this can be used as initial value without the second argument
+// for(i=0; i<numbers.length; i++) {
+//     sum+= numbers[i];
+// }
+// console.log(sum);
+
+var total = numbers.reduce(function(sum, number) {
+return sum + number;
+}, 0); //0 is the initial value as sum parameter
+console.log(total);
+//first iteration: 0 + 10 (becomes the value of the first argument)
+//second iteration: sum becomes 10 + 20 (becomes the value of the first argument)
+//third iteration: sum becomes 30 + 30
+//expected output: 60
+
+
+
