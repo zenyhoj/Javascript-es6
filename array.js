@@ -113,7 +113,7 @@ var posts = [
 ]
 var comment = {postId: 2, comment: 'Some comment on posts id 1'};
 
-// creating a function and using find helper function to display comment postId equal to posts id
+creating a function and using find helper function to display comment postId equal to posts id
 function searchCommentOnPosts(posts, comment) {
     return posts.find(function(post) { 
         return comment.postId === post.id;
