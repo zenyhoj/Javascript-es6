@@ -151,7 +151,7 @@ console.log(empDivA);
 
 
 // array.prototype.reduce
-
+// Definition: The reduce() method executes a reducer function (that you provide) on each member of the array resulting in a single output value.
 var numbers = [10, 20, 30];
 // var sum = 0; //or this can be used as initial value without the second argument
 // for(i=0; i<numbers.length; i++) {
