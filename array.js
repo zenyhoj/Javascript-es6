@@ -169,4 +169,17 @@ console.log(total);
 //expected output: 60
 
 
+// Example: balance parens 
+function balanceParens(string) {
+    return !string.split("").reduce(function(prev, char){
+        if(prev < 0 ) { return prev; }
+        if(char === "(" ) { return ++prev; }
+        if(char === ")" ) { return --prev; }
+    return prev;
+    }, 0);
+}
+
+console.log(balanceParens("))"))
+
+
 
