@@ -37,11 +37,14 @@ console.log(team.getTeamName());
 function createbookShop(inventory) {
     // returns an object
     return {
-        inventory,
+        inventory, 
         //omit the value with the same key name ie. inventory: inventory
+        /*bookTitle() {
+            return inventory.map(book => `${book.title} worths ${book.price} USD`);
+        },*/
         inventoryValue() {
         //if the value is a function, function word and the : can be omitted
-            return this.inventory.reduce((total, book) => total + book.price, 0);
+            return this.inventory.reduce((total, book) => total + book.price, 0); 
         },
         priceforTitle(title) {
             return this.inventory.find(book => book.title === title).price;
@@ -52,9 +55,15 @@ function createbookShop(inventory) {
 const inventory = [
     { title: 'harry potter', price: 102 },
     { title: 'javascript ninja', price: 100 },
+    { title: 'harry potter', price: 102 },
+    { title: 'harry potter', price: 102 },
+    { title: 'harry potter', price: 102 },
+    { title: 'harry potter', price: 102 },
 
 ];
 
-const bookShop = createbookShop(inventory);
+const bookShop = createbookShop(inventory); //array of inventory
+//console.log(bookShop.inventory);
+//console.log(bookShop.bookTitle());
 console.log(bookShop.inventoryValue());
-console.log(bookShop.priceforTitle('harry potter'));
+console.log(bookShop.priceforTitle('javascript ninja'));
