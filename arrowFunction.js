@@ -24,7 +24,7 @@ let team = {
     getTeamName: function() {
         return this.members.map( (member) => { 
             return `${member} is on team ${this.teamName}`;
-            //=> this.teamName will point to the current object
+            //=> using => this will point to team object so this.teamName or team.teamName will return an exact values
             //using map with regular function, this.teamName will lose its value
         });
 }
@@ -32,3 +32,29 @@ let team = {
 
 console.log(team.getTeamName());
 
+//Example 3. Enhanced Object Literal
+
+function createbookShop(inventory) {
+    // returns an object
+    return {
+        inventory,
+        //omit the value with the same key name ie. inventory: inventory
+        inventoryValue() {
+        //if the value is a function, function word and the : can be omitted
+            return this.inventory.reduce((total, book) => total + book.price, 0);
+        },
+        priceforTitle(title) {
+            return this.inventory.find(book => book.title === title).price;
+        }
+    }; 
+}
+
+const inventory = [
+    { title: 'harry potter', price: 102 },
+    { title: 'javascript ninja', price: 100 },
+
+];
+
+const bookShop = createbookShop(inventory);
+console.log(bookShop.inventoryValue());
+console.log(bookShop.priceforTitle('harry potter'));
