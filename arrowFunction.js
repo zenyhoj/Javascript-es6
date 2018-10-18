@@ -17,13 +17,15 @@ const person = {
 }
 console.log(person.getFullName());
 
-// 
+// Solving this.
 let team = {
     members: ['jane', 'joe'], 
     teamName: 'Super coders',
     getTeamName: function() {
-        return this.members.map((member)=> { //=> this.teamName will point to the current object
-return `${member} is on team ${this.teamName}`;
+        return this.members.map( (member) => { 
+            return `${member} is on team ${this.teamName}`;
+            //=> this.teamName will point to the current object
+            //using map with regular function, this.teamName will lose its value
         });
 }
 }
