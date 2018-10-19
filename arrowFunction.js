@@ -52,6 +52,7 @@ function createbookShop(inventory) {
     }; 
 }
 
+
 const inventory = [
     { title: 'harry potter', price: 102 },
     { title: 'javascript ninja', price: 100 },
@@ -59,6 +60,7 @@ const inventory = [
     { title: 'harry potter', price: 102 },
     { title: 'harry potter', price: 102 },
     { title: 'harry potter', price: 102 },
+    { title: 'eloquent javascript', price: 102 },
 
 ];
 
