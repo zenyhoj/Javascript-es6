@@ -68,4 +68,4 @@ const bookShop = createbookShop(inventory); //array of inventory
 //console.log(bookShop.inventory);
 //console.log(bookShop.bookTitle());
 console.log(bookShop.inventoryValue());
-console.log(bookShop.priceforTitle('javascript ninja'));
+console.log(bookShop.priceforTitle('eloquent javascript'));
